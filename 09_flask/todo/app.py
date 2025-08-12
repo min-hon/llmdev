@@ -29,7 +29,9 @@ def index():
 
 @app.route("/delete/<int:todo_id>")
 def delete(todo_id):
-    # 課題で実装します。
+    todos = load_todos()
+    todos.pop(todo_id)
+    save_todos(todos)
     return redirect(url_for("index"))
 
 if __name__ == "__main__":

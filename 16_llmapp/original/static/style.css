@@ -1,0 +1,130 @@
+/* 全体の背景とフォント設定 */
+body {
+  font-family: Arial, sans-serif;  /* 使用するフォントをArialに設定 */
+  background-color: #f4f4f9;      /* 背景色を薄いグレーに設定 */
+  margin: 0;                       /* 余白を0に設定 */
+  padding: 0;                      /* パディングを0に設定 */
+}
+
+/* メインコンテナのスタイル */
+.container {
+  width: 100%;                     /* 幅を100%に設定 */
+  max-width: 800px;                /* 最大幅を800pxに設定 */
+  margin: 50px auto;               /* 上下に50pxのマージン、中央に配置 */
+  background-color: #fff;          /* 背景色を白に設定 */
+  padding: 20px;                   /* 内部のパディングを20pxに設定 */
+  border-radius: 8px;              /* 角を丸くする */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ぼかしのある影を設定 */
+}
+
+/* チャットボックスのスタイル */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+  border-radius: 12px;
+}
+
+/* ユーザーとボットのメッセージのスタイル */
+.user-message, .bot-message {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  max-width: 80%;
+  min-width: 40px;
+  overflow-wrap: anywhere;
+}
+
+/* ユーザーのメッセージスタイル */
+.user-message {
+  background-color: #cce5ff;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* ボットのメッセージスタイル */
+.bot-message {
+  background-color: #e2e3e5;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* 吹き出しの三角形を作成するスタイル */
+.user-message:after, .bot-message:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0; height: 0;
+  transform: translateY(-50%);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+/* ユーザーのメッセージの吹き出し三角形 */
+.user-message:after {
+  right: -6px;
+  border-left: 8px solid #cce5ff;
+}
+
+/* ボットのメッセージの吹き出し三角形 */
+.bot-message:after {
+  left: -6px;
+  border-right: 8px solid #e2e3e5;
+}
+
+/* 入力ボックスのスタイル */
+.input-box {
+  display: flex;                   /* フレックスボックスで並べる */
+  align-items: flex-start;          /* 上揃え */
+  justify-content: space-between;   /* ボタンとテキストエリアを左右に配置 */
+}
+
+/* 入力エリア（textarea）のスタイル */
+.input-box textarea {
+  width: 85%;                       /* 幅を85%に設定 */
+  padding: 10px;                    /* 内部パディングを10pxに設定 */
+  border-radius: 5px;               /* 角を丸くする */
+  border: 1px solid #ccc;           /* 境界線を薄いグレーに設定 */
+  font-size: 16px;                  /* フォントサイズを16pxに設定 */
+  resize: vertical;                 /* 垂直方向にサイズ変更可能 */
+  min-height: 50px;                 /* 最小高さを50pxに設定 */
+}
+
+/* 送信ボタンのスタイル */
+.input-box button {
+  padding: 10px 15px;               /* 内部パディングを設定 */
+  background-color: #007bff;        /* 背景色を青に設定 */
+  color: #fff;                      /* 文字色を白に設定 */
+  border: none;                     /* 境界線なし */
+  border-radius: 5px;               /* 角を丸くする */
+  cursor: pointer;                  /* マウスカーソルをポインターに設定 */
+}
+
+/* 送信ボタンのホバー時のスタイル */
+.input-box button:hover {
+  background-color: #0056b3;        /* ホバー時に青色を少し暗くする */
+}
+
+/* 履歴を消去するボタンのスタイル */
+.clear-button {
+  padding: 10px 15px;               /* 内部パディングを設定 */
+  background-color: #dc3545;        /* 背景色を赤に設定 */
+  color: #fff;                      /* 文字色を白に設定 */
+  border: none;                     /* 境界線なし */
+  border-radius: 5px;               /* 角を丸くする */
+  cursor: pointer;                  /* マウスカーソルをポインターに設定 */
+  margin-top: 10px;                 /* 上部に10pxのマージン */
+}
+
+/* 履歴を消去するボタンのホバー時のスタイル */
+.clear-button:hover {
+  background-color: #c82333;        /* ホバー時に赤色を少し暗くする */
+}
